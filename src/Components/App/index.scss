@@ -1,0 +1,15 @@
+@import '../common.scss';
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .gameWindow {
+        background: $greenBackground;
+        width: 640px;
+        height: 480px;
+        margin: 0 auto;
+    }
+}
