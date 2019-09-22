@@ -5,13 +5,16 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^9.6.1",
+    "classnames": "^2.2.6",
     "postcss-modules": "^1.4.1",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "sass": "^1.22.12"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.12.3"

@@ -5,11 +5,14 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    font-family: Inky-Thin-Pixels;
+    color: $textColorRegular;
 
     .gameWindow {
         background: $greenBackground;
         width: 640px;
         height: 480px;
         margin: 0 auto;
+        padding: 20px;
     }
 }

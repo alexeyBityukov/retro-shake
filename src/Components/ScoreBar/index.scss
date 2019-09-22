@@ -1,0 +1,21 @@
+@import '../common.scss';
+
+.root {
+    font-size: $textSize;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: calc( #{$pixelSize} + #{$textSize});
+        height: $pixelSize;
+        width: 100%;
+        background: $textColorRegular;
+    }
+}
+
+.bird {
+    margin-right: $pixelSize;
+}
