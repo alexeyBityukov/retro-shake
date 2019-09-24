@@ -1,0 +1,8 @@
+@import '../common.scss';
+
+.root {
+    box-sizing: border-box;
+    margin: 3*$pixelSize 0 0;
+    border: $pixelSize solid $textColorRegular;
+    height: calc(100% - #{$textSize} - #{3*$pixelSize});
+}
