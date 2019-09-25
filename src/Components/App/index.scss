@@ -15,5 +15,7 @@
         margin: 0 auto;
         padding: $windowPadding;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
     }
 }
