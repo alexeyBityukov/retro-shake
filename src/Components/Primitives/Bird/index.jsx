@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styles from './index.scss';
+import styles from '../../common.scss';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 import Row from '../Row';
 
 class Bird extends PureComponent {
   render() {
     const { className } = this.props;
-    const rootClassNames = cx(styles.root, className);
+    const rootClassNames = cx(styles.displayInlineBlock, className);
 
     const TransparentPixel = <Pixel color={PIXEL_COLORS.transparent} />;
     const RegularPixel = <Pixel color={PIXEL_COLORS.textRegular} />;
