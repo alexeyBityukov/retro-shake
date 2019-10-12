@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "rm-parcel-cache": "rm -rf .cache",
+    "rm-cache": "rm -rf .cache",
     "lint": "./node_modules/.bin/eslint src/Components"
   }
 }

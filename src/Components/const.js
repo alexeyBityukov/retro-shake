@@ -9,5 +9,5 @@ export {
   MAX_X,
   MIN_X,
   MAX_Y,
-  MIN_Y
+  MIN_Y,
 };
