@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.scss';
 import ShakeBody from '../Primitives/ShakeBody';
+import ShakeHead from '../Primitives/ShakeHead';
 import {
   DIRECTIONS
 } from '../Controller/const';
@@ -18,7 +19,7 @@ class GameWindow extends PureComponent {
 
     return (
       <div className={styles.root}>
-        <ShakeBody x={headPositionX} y={headPositionY} />
+        <ShakeHead x={headPositionX} y={headPositionY} direction={DIRECTIONS.right} />
         {/* <ShakeBody /> */}
         {/* <ShakeBody /> */}
       </div>
