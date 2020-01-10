@@ -7,7 +7,15 @@ const DIRECTIONS = {
 
 const TICK_INTERVAL = 1000;
 
+const KEYS = {
+  arrowDown: 'ArrowDown',
+  arrowUp: 'ArrowUp',
+  arrowLeft: 'ArrowLeft',
+  arrowRight: 'ArrowRight',
+};
+
 export {
   TICK_INTERVAL,
   DIRECTIONS,
+  KEYS,
 };

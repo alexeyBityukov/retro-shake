@@ -5,7 +5,8 @@ import ScoreBar from '../ScoreBar';
 import GameWindow from '../GameWindow';
 import {
   DIRECTIONS,
-  TICK_INTERVAL
+  TICK_INTERVAL,
+  KEYS,
 } from './const';
 import {
   MIN_X,
@@ -24,7 +25,22 @@ class Controller extends PureComponent {
 
     componentDidMount() {
       setInterval(this.tick, TICK_INTERVAL);
+      document.addEventListener('keydown', this.onKeyDown);
     }
+
+    onKeyDown = ({ key }) => {
+      event.stopPropagation();
+      let direction = this.state.shakeDirection;
+
+      switch(key) {
+        case KEYS.arrowDown: direction = DIRECTIONS.bottom; break;
+        case KEYS.arrowUp: direction = DIRECTIONS.top; break;
+        case KEYS.arrowRight: direction = DIRECTIONS.right; break;
+        case KEYS.arrowLeft: direction = DIRECTIONS.left; break;
+      }
+      
+      this.setState({ shakeDirection: direction });
+    };
 
     tick = () => {
       const {

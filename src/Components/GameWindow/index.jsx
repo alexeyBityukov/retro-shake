@@ -15,11 +15,11 @@ import {
 
 class GameWindow extends PureComponent {
   render() {
-    const { headPositionX, headPositionY} = this.props;
+    const { headPositionX, headPositionY, shakeDirection} = this.props;
 
     return (
       <div className={styles.root}>
-        <ShakeHead x={headPositionX} y={headPositionY} direction={DIRECTIONS.right} />
+        <ShakeHead x={headPositionX} y={headPositionY} direction={shakeDirection} />
         {/* <ShakeBody /> */}
         {/* <ShakeBody /> */}
       </div>

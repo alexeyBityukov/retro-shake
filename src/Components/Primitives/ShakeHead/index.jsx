@@ -34,7 +34,7 @@ class ShakeHead extends React.PureComponent {
 }
 
 ShakeHead.propTypes = {
-  direction: PropTypes.oneOfType(Object.values(DIRECTIONS))
+  direction: PropTypes.oneOf(Object.values(DIRECTIONS))
 };
 
 ShakeHead.defaultProps = {
