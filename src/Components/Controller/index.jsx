@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { DEFAULT_SCORE } from '../default';
+import { DEFAULT_SCORE, DEFAULT_SHAKE_LENGHT } from '../default';
 import ScoreBar from '../ScoreBar';
 import GameWindow from '../GameWindow';
 import {
@@ -18,14 +18,23 @@ import {
 class Controller extends PureComponent {
     state = {
       score: DEFAULT_SCORE,
-      headPositionX: MIN_X,
-      headPositionY: MIN_Y,
-      shakeDirection: DIRECTIONS.right
+      headPositionX: 10,
+      headPositionY: 10,
+      shakeDirection: DIRECTIONS.right,
+      shakeLenght: DEFAULT_SHAKE_LENGHT
     };
 
     componentDidMount() {
-      setInterval(this.tick, TICK_INTERVAL);
+      const ticker = setInterval(this.tick, TICK_INTERVAL);
       document.addEventListener('keydown', this.onKeyDown);
+
+      this.setState({ticker});
+    }
+
+    stopGame = () => {
+      const { ticker } = this.state;
+      clearInterval(ticker);
+      this.setState({ ticker: undefined });
     }
 
     onKeyDown = ({ key }) => {
@@ -74,6 +83,7 @@ class Controller extends PureComponent {
           <ScoreBar />
           <GameWindow 
             {...state}
+            stopGame={this.stopGame}
           />
         </>
       );

@@ -7,8 +7,8 @@ import GameWindowPosition from '../GameWindowPosition';
 import { DIRECTIONS } from '../../Controller/const';
 import { turnedRight, turnedTop, turnedBottom, turnedLeft } from './turnedHead';
 
-const shakeHeadWidth = 5;
-const shakeHeadHeight = 3;
+export const SHAKE_HEAD_WIDTH = 5;
+export const SHAKE_HEAD_HEIGHT = 3;
 
 class ShakeHead extends React.PureComponent {
   render() {
@@ -21,8 +21,8 @@ class ShakeHead extends React.PureComponent {
 
     return (<GameWindowPosition
         {...props}
-        width={isVertical ? shakeHeadHeight: shakeHeadWidth}
-        height={isVertical? shakeHeadWidth : shakeHeadHeight}
+        width={isVertical ? SHAKE_HEAD_WIDTH: SHAKE_HEAD_HEIGHT}
+        height={isVertical? SHAKE_HEAD_HEIGHT : SHAKE_HEAD_WIDTH}
       >
         <div className={styles.displayInlineBlock}>
           {

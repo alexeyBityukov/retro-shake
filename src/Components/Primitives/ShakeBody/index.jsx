@@ -4,8 +4,8 @@ import styles from '../../common.scss';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 import GameWindowPosition from '../GameWindowPosition';
 
-const shakeBodyWidth = 4;
-const shakeBodyHeight = 2;
+export const SHAKE_BODY_WIDTH = 4;
+export const SHAKE_BODY_HEIGHT = 2;
 
 class ShakeBody extends React.PureComponent {
   render() {
@@ -13,8 +13,8 @@ class ShakeBody extends React.PureComponent {
 
     return (<GameWindowPosition
       {...props}
-      width={shakeBodyWidth}
-      height={shakeBodyHeight}
+      width={SHAKE_BODY_WIDTH}
+      height={SHAKE_BODY_HEIGHT}
       >
         <div className={styles.displayInlineBlock}>
             <Row>
