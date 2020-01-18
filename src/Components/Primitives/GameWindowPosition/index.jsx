@@ -15,27 +15,15 @@ class GameWindowPosition extends React.PureComponent {
       y,
       children,
       width,
-      height
+      height,
+      stopGame
     } = this.props;
-
-    let left = 0;
-    let top = 0;
-    
-    if(x < width)
-      left = 0;
-    else 
-      left = x - width;
-
-    if(y < height)
-      top = 0;
-    else   
-      top = y - height;
 
     return <div
       className={styles.root}
       style={{
-        left: PIXEL_SIZE * left,
-        top: PIXEL_SIZE * top
+        left: PIXEL_SIZE * x,
+        top: PIXEL_SIZE * y
       }}
     >
       {children}

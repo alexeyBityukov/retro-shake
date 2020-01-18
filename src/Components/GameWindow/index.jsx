@@ -33,16 +33,16 @@ class GameWindow extends PureComponent {
     } = this.props;
 
     const prevPositions = {
-      x: headPositionX + (SHAKE_HEAD_WIDTH - SHAKE_BODY_WIDTH),
-      y: headPositionY + SHAKE_BODY_HEIGHT + (SHAKE_HEAD_HEIGHT - SHAKE_BODY_HEIGHT),
+      x: headPositionX,// + (SHAKE_HEAD_WIDTH - SHAKE_BODY_WIDTH),
+      y: headPositionY + 1// + SHAKE_BODY_HEIGHT + (SHAKE_HEAD_HEIGHT - SHAKE_BODY_HEIGHT),
     }
 
-    const shakeBodyLenght = SHAKE_BODY_WIDTH * shakeLenght;
+    // const shakeBodyLenght = SHAKE_BODY_WIDTH * shakeLenght;
 
-    if(prevPositions.x - shakeBodyLenght < 0 ||
-      headPositionY === 0 ) {
-      stopGame();
-    }
+    // if(prevPositions.x - shakeBodyLenght < 0 ||
+    //   headPositionY === 0 ) {
+    //   stopGame();
+    // }
 
     return (
       <div className={styles.root}>
@@ -50,6 +50,7 @@ class GameWindow extends PureComponent {
           x={headPositionX}
           y={headPositionY}
           direction={shakeDirection}
+          stopGame={stopGame}
         />
         {
           [...new Array(shakeLenght).keys()].map((elem, index) => {
@@ -70,7 +71,7 @@ class GameWindow extends PureComponent {
 GameWindow.propTypes = {
   headPositionX: PropTypes.oneOf([...new Array(MAX_X + 1).keys()]),
   headPositionY: PropTypes.oneOf([...new Array(MAX_Y + 1).keys()]),
-  shakeDirection: PropTypes.oneOfType(DIRECTIONS),
+  shakeDirection: PropTypes.oneOf(Object.values(DIRECTIONS)),
   shakeLenght: PropTypes.number
 };
 

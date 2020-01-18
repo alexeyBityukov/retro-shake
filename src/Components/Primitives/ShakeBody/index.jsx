@@ -15,21 +15,35 @@ class ShakeBody extends React.PureComponent {
       {...props}
       width={SHAKE_BODY_WIDTH}
       height={SHAKE_BODY_HEIGHT}
-      >
-        <div className={styles.displayInlineBlock}>
-            <Row>
-            <Pixel color={PIXEL_COLORS.transparent} /> 
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            </Row>
-            <Row>
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            <Pixel color={PIXEL_COLORS.textRegular} /> 
-            <Pixel color={PIXEL_COLORS.transparent} /> 
-            </Row>
-        </div>
+    >
+      {/* <div className={styles.displayInlineBlock}>
+        <Row>
+          <Pixel color={PIXEL_COLORS.transparent} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+        </Row>
+        <Row>
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.transparent} /> 
+        </Row>
+      </div> */}
+      <div className={styles.displayInlineBlock}>
+        <Row>
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+        </Row>
+        <Row>
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+          <Pixel color={PIXEL_COLORS.textRegular} /> 
+        </Row>
+      </div>
     </GameWindowPosition>);
   }
 }

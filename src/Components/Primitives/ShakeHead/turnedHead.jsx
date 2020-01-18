@@ -2,6 +2,58 @@ import React from 'react';
 import Row from '../Row';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 
+export const testHead = <>
+    <Row>
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+    </Row>
+    <Row>
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+    </Row>
+    <Row>
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+      <Pixel color={PIXEL_COLORS.textRegular} /> 
+    </Row>
+  </>;
+
+export const testHeadVertical =  <>
+<Row>
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+</Row>
+<Row>
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+</Row>
+<Row> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} />
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+</Row>
+<Row> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} />
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+</Row>
+<Row> 
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+  <Pixel color={PIXEL_COLORS.textRegular} />
+  <Pixel color={PIXEL_COLORS.textRegular} /> 
+</Row>
+</>;
+
 const turnedRight = <>
     <Row>
       <Pixel color={PIXEL_COLORS.transparent} /> 

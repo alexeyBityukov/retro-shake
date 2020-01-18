@@ -5,7 +5,7 @@ import styles from '../../common.scss';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 import GameWindowPosition from '../GameWindowPosition';
 import { DIRECTIONS } from '../../Controller/const';
-import { turnedRight, turnedTop, turnedBottom, turnedLeft } from './turnedHead';
+import { turnedRight, turnedTop, turnedBottom, turnedLeft, testHead, testHeadVertical } from './turnedHead';
 
 export const SHAKE_HEAD_WIDTH = 5;
 export const SHAKE_HEAD_HEIGHT = 3;
@@ -18,6 +18,7 @@ class ShakeHead extends React.PureComponent {
     const isTurnedBottom = direction === DIRECTIONS.bottom;
     const isTurnedRight = direction === DIRECTIONS.right;
     const isVertical = isTurnedTop || isTurnedBottom;
+    console.log(props.x, props.y);
 
     return (<GameWindowPosition
         {...props}
@@ -26,7 +27,8 @@ class ShakeHead extends React.PureComponent {
       >
         <div className={styles.displayInlineBlock}>
           {
-            isTurnedRight ? turnedRight : isTurnedTop ? turnedTop : isTurnedBottom ? turnedBottom : turnedLeft 
+            //isTurnedRight ? turnedRight : isTurnedTop ? turnedTop : isTurnedBottom ? turnedBottom : turnedLeft 
+            isTurnedRight ? testHead : isTurnedTop ? testHeadVertical : isTurnedBottom ? testHeadVertical : testHead 
           }
         </div>
     </GameWindowPosition>);
