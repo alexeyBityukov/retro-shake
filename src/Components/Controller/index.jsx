@@ -12,19 +12,24 @@ import {
   MIN_X,
   MIN_Y,
   MAX_Y,
-  MAX_X
+  MAX_X,
+  DEFAULT_HEAD_POSITION_X,
+  DEFAULT_HEAD_POSITION_Y,
 } from '../const';
 import { SHAKE_HEAD_WIDTH } from '../Primitives/ShakeHead';
 import { SHAKE_BODY_WIDTH } from '../Primitives/ShakeBody';
 
+const defaultShakePixelLenght = SHAKE_HEAD_WIDTH + DEFAULT_SHAKE_LENGHT;
+
 class Controller extends PureComponent {
     state = {
       score: DEFAULT_SCORE,
-      headPositionX: 0,
-      headPositionY: 0,
+      headPositionX: DEFAULT_HEAD_POSITION_X,
+      headPositionY: DEFAULT_HEAD_POSITION_Y,
       shakeDirection: DIRECTIONS.right,
       shakeLenght: DEFAULT_SHAKE_LENGHT,
-      shakePixelLenght: SHAKE_HEAD_WIDTH + DEFAULT_SHAKE_LENGHT,
+      shakePixelLenght: defaultShakePixelLenght,
+      path: [...(new Array(defaultShakePixelLenght))].map(() => ({ x: DEFAULT_HEAD_POSITION_X, y: DEFAULT_HEAD_POSITION_Y })),
     };
 
     componentDidMount() {
@@ -108,7 +113,9 @@ class Controller extends PureComponent {
         shakeDirection: direction,
         headPositionX,
         headPositionY,
-        shakeLenght
+        shakeLenght,
+        shakePixelLenght: prevShakePixelLenght,
+        path,
       } = this.state;
       let x = headPositionX, y = headPositionY;
       
@@ -121,10 +128,31 @@ class Controller extends PureComponent {
 
       const shakePixelLenght = SHAKE_HEAD_WIDTH + shakeLenght * SHAKE_BODY_WIDTH;
 
-      this.setState({
-        headPositionX: x,
-        headPositionY: y
+      path.push({
+        x: headPositionX,
+        y: headPositionY,
       });
+
+      const nextState = {
+        headPositionX: x,
+        headPositionY: y,
+        path,
+        shakePixelLenght
+      };
+
+      if(prevShakePixelLenght < shakePixelLenght) {
+        nextState.path.push({
+          x: headPositionX,
+          y: headPositionY,
+        });
+        nextState.shakePixelLenght = shakePixelLenght;
+      }
+      else {
+        nextState.path = path.slice(1);
+      }
+
+      console.log(this.state)
+      this.setState(nextState);
     }
 
     render() {
