@@ -29,7 +29,8 @@ class GameWindow extends PureComponent {
       headPositionY,
       shakeDirection,
       shakeLenght,
-      stopGame
+      stopGame,
+      path,
     } = this.props;
 
     const prevPositions = {
@@ -54,12 +55,12 @@ class GameWindow extends PureComponent {
         />
         {
           [...new Array(shakeLenght).keys()].map((elem, index) => {
-            prevPositions.x -= 4;
+            const position = path[path.length - index - 1];
+            // position.y += 1;
 
             return <ShakeBody
               key={index}
-              x={prevPositions.x}
-              y={prevPositions.y}
+              { ...position }
             />;
           })
         }

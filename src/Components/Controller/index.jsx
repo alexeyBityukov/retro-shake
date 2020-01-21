@@ -120,10 +120,10 @@ class Controller extends PureComponent {
       let x = headPositionX, y = headPositionY;
       
       switch(direction) {
-        case DIRECTIONS.top: y > MIN_Y && y--; break;
-        case DIRECTIONS.bottom: y < MAX_Y && y++; break;
-        case DIRECTIONS.left: x > MIN_X && x--; break;
-        case DIRECTIONS.right: x < MAX_X && x++; break;
+        case DIRECTIONS.top: y > MIN_Y && y, y-=4; break;
+        case DIRECTIONS.bottom: y < MAX_Y && y, y+=4; break;
+        case DIRECTIONS.left: x > MIN_X && x, x-=4; break;
+        case DIRECTIONS.right: x < MAX_X && x, x+=4; break;
       };
 
       const shakePixelLenght = SHAKE_HEAD_WIDTH + shakeLenght * SHAKE_BODY_WIDTH;
@@ -131,6 +131,7 @@ class Controller extends PureComponent {
       path.push({
         x: headPositionX,
         y: headPositionY,
+        direction,
       });
 
       const nextState = {
@@ -144,14 +145,14 @@ class Controller extends PureComponent {
         nextState.path.push({
           x: headPositionX,
           y: headPositionY,
+          direction, 
         });
         nextState.shakePixelLenght = shakePixelLenght;
       }
       else {
         nextState.path = path.slice(1);
       }
-
-      console.log(this.state)
+      console.log(nextState);
       this.setState(nextState);
     }
 

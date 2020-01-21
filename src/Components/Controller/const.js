@@ -5,7 +5,7 @@ const DIRECTIONS = {
   right: 3,
 };
 
-const TICK_INTERVAL = 1000;
+const TICK_INTERVAL = 2000;
 
 const KEYS = {
   arrowDown: 'ArrowDown',
