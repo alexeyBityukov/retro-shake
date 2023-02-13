@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import styles from '../../common.scss';
+import styles from '../../common.module.scss';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 import Row from '../Row';
 

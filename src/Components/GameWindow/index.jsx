@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import styles from './index.scss';
+import styles from './index.module.scss';
 import ShakeBody, {
   SHAKE_BODY_WIDTH,
   SHAKE_BODY_HEIGHT

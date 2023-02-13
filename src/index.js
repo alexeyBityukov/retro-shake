@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './Components/App';
 
 const mountNode = document.getElementById('app');
-ReactDOM.render(<App />, mountNode);
+const root = createRoot(mountNode);
+root.render(<App />);

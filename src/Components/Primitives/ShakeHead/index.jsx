@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Row from '../Row';
-import styles from '../../common.scss';
+import styles from '../../common.module.scss';
 import Pixel, { PIXEL_COLORS } from '../Pixel';
 import GameWindowPosition from '../GameWindowPosition';
 import { DIRECTIONS } from '../../Controller/const';

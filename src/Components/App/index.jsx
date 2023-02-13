@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styles from './index.scss';
+import styles from './index.module.scss';
 import Controller from '../Controller';
 
 class App extends PureComponent {
