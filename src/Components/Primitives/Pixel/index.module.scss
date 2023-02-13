@@ -1,0 +1,14 @@
+@import '../../common.module';
+
+.root {
+    height: $pixelSize;
+    width: $pixelSize;
+}
+
+.transparent {
+    color: transparent;
+}
+
+.textRegular {
+    background: $textColorRegular;
+}

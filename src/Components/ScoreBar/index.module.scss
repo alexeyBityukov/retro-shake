@@ -1,0 +1,22 @@
+@import '../common.module';
+
+.root {
+    font-size: $textSize;
+    line-height: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: calc( #{$pixelSize} + #{$textSize});
+        height: $pixelSize;
+        width: 100%;
+        background: $textColorRegular;
+    }
+}
+
+.bird {
+    margin-right: $pixelSize;
+}
